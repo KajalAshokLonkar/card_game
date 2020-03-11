@@ -1,0 +1,68 @@
+<html>
+<head>
+<style>
+	.imgdiv{
+	height:400px;
+	width:500px;
+	background:red;
+	}
+	.btn_play{
+	width:100px;
+	height:50px;
+	background:#FFC300;
+	color:white;
+	}
+</style>
+<script>
+	function play()
+	{
+	var Arr=['2D.png','2C.png','4H.png','2D.png','3D.png','4H.png','5H.png','6S.png','7S.png','8H.png','9C.png','10D.png','3H.png'];
+	var random=Arr[Math.floor(Math.random()*Arr.length)];
+	document.getElementById('image').src=random;
+	}
+	function call()
+	{
+	alert(i);
+	i=0;
+	var img_loop=setInterval(lopp,2000);
+	}
+	var i=0;
+	function lopp()
+	{
+		
+		if(i<5)
+		{
+			i++;
+			play();
+		}
+		else
+		{
+			clearInterval(img_loop);
+		i=0;	
+		}
+	}
+	
+</script>
+</head>
+<body>
+Card
+<div class="imgdiv1" id="imgdiv1">
+<table>
+<tr>
+<td><img style="width:200px;height:400px;" src="2D.png" id="image"/></td>
+<td><img style="width:200px;height:400px;" src="7S.png" id="image1"/></td>
+<td><img style="width:200px;height:400px;" src="5H.png"  id="image2"/></td>
+<td>
+All cards have same color: 		30 points<br>
+All cards have same number :	50 points<br>
+All cards have same design:		50 points<br>
+All cards are complete same: 	200 points<br><br>
+Your Points :<input type="text" id="points"></td>
+</tr>
+</table>
+</div>
+<div>
+<button onclick="call()" class="btn_play">Play</button>
+</div>
+</body>
+</html>
